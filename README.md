@@ -14,4 +14,4 @@
 
 **Доступность проекта на GitHub Pages**
 
-https://denis-110889.github.io/russian-travel-public/index.html
+https://denis-110889.github.io/mesto/index.html
