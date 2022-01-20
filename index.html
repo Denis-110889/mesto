@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestro</title>
+    <link rel="stylesheet" href="pages/index.css">
+</head>
+<body class="body">
+    <div class="page">
+
+
+        <header class="header">
+            <img src="images/header-logo.svg" class="header__logo" alt="Логотип mestro">
+            <div class="header__line"></div>
+        </header>
+
+        <main class="content">
+            <section class="profile">
+                <div class="profile__conteiner">
+                    <img class="profile__avatar" src="images/image-profile.jpg" alt="фото профиля">
+                    <div class="profile__info">
+                        <div class="profile__name">  
+                            <h1 class="profile__title">Жак-Ив Кусто</h1>
+                            <button class="profile__edit-button"><img class="profile__button-image" src="images/button-profile.svg" alt="кнопка редактрования профиля"></button>
+                        </div> 
+                        <p class="profile__subtitle">Исследователь океана</p>
+                    </div>
+                </div>
+                <button class="profile__add-button"><img class="profile__button-img" src="images/button-load.svg" alt="кнопка добавления треков"></button>
+            </section>
+
+            <section class="elements">
+
+                <div class="element">
+                    <img class="element__image" src="images/dombay.jpg" alt="вид на горы Домбая">
+                    <div class="element__mask-group">
+                        <h2 class="element__title">Домбай</h2>
+                        <img class="element__group" src="images/heart.svg" alt="like">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__image" src="images/elbrus.jpg" alt="вид на Эльбрус">
+                    <div class="element__mask-group">
+                        <h2 class="element__title">Эльбрус</h2>
+                        <img class="element__group" src="images/heart.svg" alt="like">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__image" src="images/karahaevsk.jpg" alt="вид на здание в горах">
+                    <div class="element__mask-group">
+                        <h2 class="element__title">Карачаевск</h2>
+                        <img class="element__group" src="images/heart.svg" alt="like">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__image" src="images/dombay.jpg" alt="вид на горы Домбая">
+                    <div class="element__mask-group">
+                        <h2 class="element__title">Домбай</h2>
+                        <img class="element__group" src="images/heart.svg" alt="like">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__image" src="images/elbrus.jpg" alt="вид на Эльбрус">
+                    <div class="element__mask-group">
+                        <h2 class="element__title">Эльбрус</h2>
+                        <img class="element__group" src="images/heart.svg" alt="like">
+                    </div>
+                </div>
+
+                <div class="element">
+                    <img class="element__image" src="images/karahaevsk.jpg" alt="вид на здание в горах">
+                    <div class="element__mask-group">
+                        <h2 class="element__title">Карачаевск</h2>
+                        <img class="element__group" src="images/heart.svg" alt="like">
+                    </div>
+                </div>
+
+            </section>
+        </main>
+
+        <footer class="footer">
+            <h2 class="footer__copyring">© 2020 Mesto Russia</h2>
+        </footer>
+
+        <div class="popup">
+            <div class="popup__body">
+                <div class="popup__content">
+                    <a class="popup__close" href="#"><img class="popup__close-image" src="images/close-button.svg" alt="Кнопка закрытия"></a>
+                    <h2 class="popup__title">Редактировать профиль</h2>
+                    <input class="popup__name" name="name" type="text" placeholder="Имя">
+                    <div class="popup__line"></div>
+                    <input class="popup__about" name="about" type="text" placeholder="Расскажите о себе">
+                    <div class="popup__line"></div>
+                    <button class="popup__save">Сохранить</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="script/script.js"></script>
+</body>
+</html>

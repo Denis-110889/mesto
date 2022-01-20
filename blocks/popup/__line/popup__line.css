@@ -1,0 +1,23 @@
+.popup__line {
+    max-width: 358px;
+    margin: 0px auto;
+    margin-bottom: 30px;
+    border: 1px solid rgb(0, 0, 0);
+    opacity: 0.2;
+}
+
+.popup__line:last-of-type {
+    margin-bottom: 48px;
+}
+
+@media screen and (max-width: 540px) {
+    .popup__line {
+        max-width: 238px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .popup__line:last-of-type {
+        margin-bottom: 45px;
+    }
+}

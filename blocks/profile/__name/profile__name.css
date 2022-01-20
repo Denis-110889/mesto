@@ -1,0 +1,11 @@
+.profile__name {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 595px) {
+    .profile__name {
+        margin: 0 auto;
+        max-width: 217px;
+    }
+}
