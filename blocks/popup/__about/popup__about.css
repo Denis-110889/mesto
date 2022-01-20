@@ -4,13 +4,13 @@
     padding: 0;
     margin: 0;
     margin-bottom: 13px;
-    margin-left: 36px;    
+    margin-left: 36px;
     border: none;
 }
 
 @media screen and (max-width: 540px) {
     .popup__about {
-        MARGIN-LEFT: 22PX;
+        margin-left: 22px;
         margin-bottom: 13px;
         max-width: 238px;
     }
