@@ -15,8 +15,8 @@ let profileSubtitle = document.querySelector('.profile__subtitle');
 
 /* Объект строки ввода */
 
-let popupName = document.querySelector('.popup_input_name');
-let popupAbout = document.querySelector('.popup_input_about');
+let popupName = document.querySelector('.popup__input_place_name');
+let popupAbout = document.querySelector('.popup__input_place_about');
 
 
 
