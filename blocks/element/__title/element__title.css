@@ -10,3 +10,9 @@
     white-space: nowrap;
     overflow: hidden;
 }
+
+@media screen and (max-width: 595px) {
+    .elements__title {
+        max-width: 282px;
+    }
+}

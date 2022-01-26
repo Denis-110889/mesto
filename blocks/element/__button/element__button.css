@@ -1,0 +1,9 @@
+.element__button {
+    border: none;
+    cursor: pointer;
+}
+
+.element__button:hover {
+    opacity: .5;
+    transition: .15s;
+}
