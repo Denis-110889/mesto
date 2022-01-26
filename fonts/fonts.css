@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Inter';
-    font-weight: Regular;
+    font-weight: regular;
     font-weight: 400;
     font-style:  normal;
     src: local("Inter-Regular"),
@@ -12,7 +12,7 @@
 
 @font-face {
     font-family: 'Inter';
-    font-weight: Medium;
+    font-weight: medium;
     font-weight: 500;
     font-style:  normal;
     src: local("Inter-Medium"),
@@ -24,7 +24,7 @@
 
 @font-face {
     font-family: 'Inter';
-    font-weight: Black;
+    font-weight: black;
     font-weight: 900;
     font-style:  normal;
     src: local("Inter-Black"),
