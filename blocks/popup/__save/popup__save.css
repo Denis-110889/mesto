@@ -9,6 +9,7 @@
     cursor: pointer;
     padding: 0;
     margin-left: 36px;
+    margin-bottom: 25px;
 }
 
 .popup__save:hover {
@@ -24,6 +25,5 @@
         line-height: 17px;
         margin: 0;
         margin-left: 22px;
-        margin-top: -3px;
     }
 }

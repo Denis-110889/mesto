@@ -2,6 +2,7 @@
 /*  Общие объекты */
 
 let popup = document.querySelector('.popup');
+let popupContent = popup.querySelector('.popup__content');
 
 /* Объекты кнопок */
 
@@ -43,7 +44,6 @@ function profilePopupSubmit(event) {
     profileTitle.textContent = `${popupName.value}`;
     profileSubtitle.textContent = `${popupAbout.value}`;
     closePopup();
-
 }
 
 
@@ -52,4 +52,4 @@ function profilePopupSubmit(event) {
 
 popupOpen.addEventListener('click', openPopup);
 popupClose.addEventListener('click', closePopup);
-popup.addEventListener('submit', profilePopupSubmit);
+popupContent.addEventListener('submit', profilePopupSubmit);
