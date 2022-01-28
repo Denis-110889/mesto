@@ -2,7 +2,7 @@
 /*  Общие объекты */
 
 let popup = document.querySelector('.popup');
-let popupContent = popup.querySelector('.popup__content');
+let popupForm = popup.querySelector('.popup__form');
 
 /* Объекты кнопок */
 
@@ -52,4 +52,4 @@ function profilePopupSubmit(event) {
 
 popupOpen.addEventListener('click', openPopup);
 popupClose.addEventListener('click', closePopup);
-popupContent.addEventListener('submit', profilePopupSubmit);
+popupForm.addEventListener('submit', profilePopupSubmit);

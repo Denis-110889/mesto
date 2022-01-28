@@ -29,8 +29,6 @@
         margin-top: 33px;
         height: 18px;
         width: 18px;
-        display: flex;
-        align-items:center;
-        justify-content: center;
+        background-image: url(../../../images/button-profileSmall.svg);
     }
 }
