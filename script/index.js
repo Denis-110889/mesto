@@ -1,16 +1,16 @@
 
 /*----- Объекты решил объединить по блокам --------------------------------------------------------- */
 
-const popupProfil = document.querySelector('.popup_type_profil');
-const popupProfilForm = document.querySelector('.popup__form-profil');
+const popupProfile = document.querySelector('.popup_type_profile');
+const popupProfileForm = document.querySelector('.popup__form-profile');
 const popupProfileTitle = document.querySelector('.profile__title');
 const popupProfileSubtitle = document.querySelector('.profile__subtitle');
-const popupProfilOpen = document.querySelector('.profile__edit-button');
-const popupProfilClose = document.querySelector('.popup__close_profil');
-const popupProfilInputName = document.querySelector('.popup__input_place_name');
-const popupProfilInputAbout = document.querySelector('.popup__input_place_about');
+const popupProfileOpen = document.querySelector('.profile__edit-button');
+const popupProfileClose = document.querySelector('.popup__close_profile');
+const popupProfileInputName = document.querySelector('.popup__input_place_name');
+const popupProfileInputAbout = document.querySelector('.popup__input_place_about');
 
-const popupAddCardImage = document.querySelector('.popup_type_image');
+const popupAddCardImage = document.querySelector('.popup_type_add-card');
 const popupOpenImage = document.querySelector('.profile__add-button');
 const popupCloseImage = document.querySelector('.popup__close_image');
 const popupFormImage = document.querySelector('.popup__form-image');
@@ -26,16 +26,11 @@ const sectionForElements = document.querySelector('.elements');
 const elementTitle = document.querySelector('.element__title');
 const template = document.querySelector('.template__item').content;
 
-
 /*---  Кнопки ----------------------------------------------------------*/
 
-popupProfilOpen.addEventListener('click', openPopupEditProfil);//кнопка открытия попапа редактирования профиля
-popupProfilClose.addEventListener('click', () => closePopup(popupProfil));//кнопка закрытия попапа редактирования профиля
-/*Подскажите пожалуйста вот есть такой пример popupProfilForm.addEventListener('submit', closedPopup(popupProfil))
-я передаю такой параметр в функцию, но это функция не хочет работать, нашел на просторах инета документацию и рабочее решение, 
-чтобы эта вся конструкция заработала, но если можно объясните мне почему все таки не запускается функция с параметром и как правильнее передать
-параметр в саму функцию, ведь если я запускаю просто функцию она отрабатывает... */
-popupProfilForm.addEventListener('submit', handleProfilePopupSubmit);//кнопка сохранения формы попапа редактирования профиля
+popupProfileOpen.addEventListener('click', openPopupEditProfile);//кнопка открытия попапа редактирования профиля
+popupProfileClose.addEventListener('click', () => closePopup(popupProfile));//кнопка закрытия попапа редактирования профиля
+popupProfileForm.addEventListener('submit', handleProfilePopupSubmit);//кнопка сохранения формы попапа редактирования профиля
 popupOpenImage.addEventListener('click', () => openPopup(popupAddCardImage));//кнопка открытия попапа добавления фото
 popupCloseImage.addEventListener('click', () => closePopup(popupAddCardImage));//кнопка закрытия попапа добавления фото
 popupFormImage.addEventListener('submit', handleCardFormSubmit);//кнопка сохранения формы попапа добавления фото
@@ -43,25 +38,25 @@ popupFigureClose.addEventListener('click', () => closePopup(popupFigure));//Кн
 
 
 /* Универсальная функция открытие попапов */ //У меня к Вам вопрос а можно ли использовать toggle - не станет ли она универсальной еще и на закрытие?
-function openPopup(object){
-    object.classList.add('popup_opened');
+function openPopup(element){
+    element.classList.add('popup_opened');
 }
 /* Универсальная функция закрытия попапов */ 
-function closePopup(object){
-    object.classList.remove('popup_opened');
+function closePopup(element){
+    element.classList.remove('popup_opened');
 }
 /* Фуккция открытие попапа редактирования профиля - решил вывести в отдельную функцию так каесть доп параметры - универсальную функцию встроил внутрь */
-function openPopupEditProfil() {
-    popupProfilInputName.value = popupProfileTitle.textContent;
-    popupProfilInputAbout.value = popupProfileSubtitle.textContent;
-    openPopup(popupProfil);
+function openPopupEditProfile() {
+    popupProfileInputName.value = popupProfileTitle.textContent;
+    popupProfileInputAbout.value = popupProfileSubtitle.textContent;
+    openPopup(popupProfile);
 }
 /* Фуккция сохранения данных профиля */
 function handleProfilePopupSubmit(event) {
     event.preventDefault();
-    popupProfileTitle.textContent = `${popupProfilInputName.value}`;
-    popupProfileSubtitle.textContent = `${popupProfilInputAbout.value}`;
-    closePopup(popupProfil);
+    popupProfileTitle.textContent = `${popupProfileInputName.value}`;
+    popupProfileSubtitle.textContent = `${popupProfileInputAbout.value}`;
+    closePopup(popupProfile);
 }
 /* Функция добавления карточек из массива и добавление карточек пользователем */
 function handleCardFormSubmit(evt) {// буду вешать эту функцию на сабмит формы
