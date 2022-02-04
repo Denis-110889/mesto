@@ -1,138 +1,115 @@
-const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-    
-];
 
-/*----- Объекты --------------------------------------------------------- */
+/*----- Объекты решил объединить по блокам --------------------------------------------------------- */
 
-const popup = document.querySelector('.popupContent');
-const popupForm = popup.querySelector('.popup__form');
-const profileTitle = document.querySelector('.profile__title');
-const profileSubtitle = document.querySelector('.profile__subtitle');
-const popupImage = document.querySelector('.popupImage');
+const popupProfil = document.querySelector('.popup_type_profil');
+const popupProfilForm = document.querySelector('.popup__form-profil');
+const popupProfileTitle = document.querySelector('.profile__title');
+const popupProfileSubtitle = document.querySelector('.profile__subtitle');
+const popupProfilOpen = document.querySelector('.profile__edit-button');
+const popupProfilClose = document.querySelector('.popup_close_profil');
+const popupProfilInputName = document.querySelector('.popup__input_place_name');
+const popupProfilInputAbout = document.querySelector('.popup__input_place_about');
+
+const popupAddCardImage = document.querySelector('.popup_type_image');
 const popupOpenImage = document.querySelector('.profile__add-button');
-const popupCloseImage = document.querySelector('.popupImage__close');
-const popupImageForm = document.querySelector('.popupImage__form');
-const elementsSection = document.querySelector('.elements');
+const popupCloseImage = document.querySelector('.popup_close_image');
+const popupFormImage = document.querySelector('.popup__form-image');
+const popupInputNameImage = document.querySelector('.popup__input_place_place');
+const popupInputLinkImage = document.querySelector('.popup__input_place_link');
+
+const popupFigure = document.querySelector('.popup_type_figure');
+const popupFigureImage = document.querySelector('.popup__image');
+const popupFigureFigcaption = document.querySelector('.popup__figcaption');
+const popupFigureClose = document.querySelector('.popup_close_figure');
+
+const sectionForElements = document.querySelector('.elements');
+const elementTitle = document.querySelector('.element__title');
 const template = document.querySelector('.template__item').content;
-const popupOpen = document.querySelector('.profile__edit-button');
-const popupClose = document.querySelector('.popup__closeContent');
-const popupName = document.querySelector('.popup__input_place_name');//инпут имя профиля
-const popupAbout = document.querySelector('.popup__input_place_about');//инпут о себе попап 1
-const popupNameImage = document.querySelector('.popup__input_place_place');//инпут места во 2 попапе
-const popupLinkImage = document.querySelector('.popup__input_place_link');//инпут ссылки 2 попапа
-const nameCardElement = document.querySelector('.element__title');
-const popupFigure = document.querySelector('.popupFigure');//Элемент 3 общий блок
-const popupFigureImage = document.querySelector('.popupFigure__image');//Элемент 3 попапа изображение
-const figcaption = document.querySelector('.popupFigure__figcaption');//Элемент 3 подпись к изображению
-const popupCloseFigure = document.querySelector('.popup__closeFigure');//Элемент 3 попапа кнопка закрытия
+
 
 /*---  Кнопки ----------------------------------------------------------*/
 
-popupOpen.addEventListener('click', openPopup);//кнопка открытия попапа редактирования профиля
-popupClose.addEventListener('click', closePopup);//кнопка закрытия попапа редактирования профиля
-popupForm.addEventListener('submit', profilePopupSubmit);//кнопка сохранения формы попапа редактирования профиля
-popupOpenImage.addEventListener('click', openPopupImage);//кнопка открытия попапа добавления фото
-popupCloseImage.addEventListener('click', closePopup);//кнопка закрытия попапа добавления фото
-popupImageForm.addEventListener('submit', cardSubmitImage);//кнопка сохранения формы попапа добавления фото
-popupCloseFigure.addEventListener('click', closePopup);//Кнопка закрытия 3 попапа
+popupProfilOpen.addEventListener('click', openPopupEditProfil);//кнопка открытия попапа редактирования профиля
+popupProfilClose.addEventListener('click', () => closePopup(popupProfil));//кнопка закрытия попапа редактирования профиля
+/*Подскажите пожалуйста вот есть такой пример popupProfilForm.addEventListener('submit', closedPopup(popupProfil))
+я передаю такой параметр в функцию, но это функция не хочет работать, нашел на просторах инета документацию и рабочее решение, 
+чтобы эта вся конструкция заработала, но если можно объясните мне почему все таки не запускается функция с параметром и как правильнее передать
+параметр в саму функцию, ведь если я запускаю просто функцию она отрабатывает... */
+popupProfilForm.addEventListener('submit', handleProfilePopupSubmit);//кнопка сохранения формы попапа редактирования профиля
+popupOpenImage.addEventListener('click', () => openPopup(popupAddCardImage));//кнопка открытия попапа добавления фото
+popupCloseImage.addEventListener('click', () => closePopup(popupAddCardImage));//кнопка закрытия попапа добавления фото
+popupFormImage.addEventListener('submit', handleCardFormSubmit);//кнопка сохранения формы попапа добавления фото
+popupFigureClose.addEventListener('click', () => closePopup(popupFigure));//Кнопка закрытия 3 попапа
 
-/* Фуккция открытие попапа редактирования профиля */
-function openPopup() {
-    popupName.value = profileTitle.textContent;
-    popupAbout.value = profileSubtitle.textContent;
-    popup.classList.add('popup_opened');
+
+/* Универсальная функция открытие попапов */ //У меня к Вам вопрос а можно ли использовать toggle - не станет ли она универсальной еще и на закрытие?
+function openPopup(object){
+    object.classList.add('popup_opened');
 }
-/* Фуккция закрытия попапа редактирования профиля */
-function closePopup() {
-    popup.classList.remove('popup_opened');
-    popupImage.classList.remove('popupImage_opened');
-    popupFigure.classList.remove('popupFigure_activ');
+/* Универсальная функция закрытия попапов */ 
+function closePopup(object){
+    object.classList.remove('popup_opened');
 }
-/* Фуккция открытие попапа для добавления изображений */
-function openPopupImage() {
-    popupImage.classList.add('popupImage_opened');
-    popupNameImage.value = '';//очистим форму 
-    popupLinkImage.value = '';//очистим форму
+/* Фуккция открытие попапа редактирования профиля - решил вывести в отдельную функцию так каесть доп параметры - универсальную функцию встроил внутрь */
+function openPopupEditProfil() {
+    popupProfilInputName.value = popupProfileTitle.textContent;
+    popupProfilInputAbout.value = popupProfileSubtitle.textContent;
+    openPopup(popupProfil);
 }
 /* Фуккция сохранения данных профиля */
-function profilePopupSubmit(event) {
+function handleProfilePopupSubmit(event) {
     event.preventDefault();
-    profileTitle.textContent = `${popupName.value}`;
-    profileSubtitle.textContent = `${popupAbout.value}`;
-    closePopup();
-}
-/* Фуккция открытие попапа увеличения изображения */
-function openPopapCardIncrease() {
-    popupFigure.classList.add('popupFigure_activ');//Добавляю класс для открытия попапа
+    popupProfileTitle.textContent = `${popupProfilInputName.value}`;
+    popupProfileSubtitle.textContent = `${popupProfilInputAbout.value}`;
+    closePopup(popupProfil);
 }
 /* Функция добавления карточек из массива и добавление карточек пользователем */
-function cardSubmitImage(evt) {// буду вешать эту функцию на сабмит формы
+function handleCardFormSubmit(evt) {// буду вешать эту функцию на сабмит формы
     evt.preventDefault();
-    const oneElement = savePopupImage(popupNameImage.value, popupLinkImage.value);//Подаем на вход значение с инпутов
-    prependOneElement(elementsSection, oneElement);//Функция добавления элемента в начало списка где 1 куда подаем 2 что подаем  
-    closePopup();//закрытие попапа 
+    const cardElement = createCard(popupInputNameImage.value, popupInputLinkImage.value);//Подаем на вход значение с инпутов
+    renderCard(sectionForElements, cardElement, true);//Функция добавления элемента в начало списка где 1 куда подаем 2 что подаем 
+    popupInputNameImage.value = '';//очистим форму 
+    popupInputLinkImage.value = '';//очистим форму
+    closePopup(popupAddCardImage);//закрытие попапа 
 }
 /* Функция клонирования и наполнения карточек */
-function savePopupImage(NameImage, LinkImage) {//принимаем на вход 2параметра имя и ссылку
-    const oneElement = template.cloneNode(true);//клонируем со всем содержимым и записывваем в переменную
-    oneElement.querySelector('.element__image').src = LinkImage;//берем значения инпута для линка
-    oneElement.querySelector('.element__image').alt = NameImage;//берем значение импута для текста
-    oneElement.querySelector('.element__title').textContent = NameImage;//альт для картинки равен имени картинки
+function createCard(nameImage, linkImage) {//принимаем на вход 2параметра имя и ссылку
+    const cardElement = template.cloneNode(true);//клонируем со всем содержимым и записывваем в переменную
+    const cardImage = cardElement.querySelector('.element__image');
+    cardImage.src = linkImage;//берем значения инпута для линка
+    cardImage.alt = nameImage;//берем значение импута для текста
+    cardElement.querySelector('.element__title').textContent = nameImage;//альт для картинки равен имени картинки
     //решил добавить слушатели элементов в саму функцию, пробовал отдельно, но тогда удаление элементов и лайки не срабатывали на новых карточках
-    oneElement.querySelector('.element__button').addEventListener('click', cardLike);//кнопка лайк
-    oneElement.querySelector('.element__image').addEventListener('click', cardIncrease);//элемент изображения для открытия 3 попапа
-    oneElement.querySelector('.element__trash').addEventListener('click', cardRemove);//корзина 
-    return oneElement;
+    cardElement.querySelector('.element__button').addEventListener('click', likeCard);//кнопка лайк
+    cardImage.addEventListener('click', () => handlePreviewPicture(nameImage, linkImage));//элемент изображения для открытия 3 попапа
+    cardElement.querySelector('.element__trash').addEventListener('click', removeCard);//корзина 
+    return cardElement;
 }
-/* Функция добавления какого-либо объекта в начало списка */
-function prependOneElement(list, object) {//2 параметра на вход сам список куда добавить и объект в нашем случае oneElement
-    list.prepend(object);//тело функции добавляет объект в начало списка
-}
-/* Функция добавления какого-либо объекта в конец списка */
-function appendOneElement(list, object) {//2 параметра на вход сам список куда добавить и объект в нашем случае oneElement
-    list.append(object);//тело функции добавляет объект в конец списка
+/* Функция рендера кард в начало или в конец списка */
+function renderCard(container, card, prepend){
+    if (prepend){
+        container.prepend(card);
+    } else {
+        container.append(card);
+    }
 }
 /* Загрузка карточек из массива initialCards при открыитие страницы */
 initialCards.forEach((card) => {//перебор массива и добавление элементов массива 
-    const oneElement = savePopupImage(card.name, card.link);
-    appendOneElement(elementsSection, oneElement);
+    const cardElement = createCard(card.name, card.link);
+    renderCard(sectionForElements, cardElement, false);
 });
 /* Функция лайков карточек */
-function cardLike(event) {
+function likeCard(event) {
     event.target.classList.toggle('element__button_active');//активирую и убираю класс по нажатию при наведении 
 }
 /* Функция удаления карточек */
-function cardRemove(event) {
+function removeCard(event) {
     event.target.closest('.element').remove();//Закрываю элемент и сразу удаляю 
 }
 /*Реализация увеличения изображения на весь экран до 75 процентов*/
-function cardIncrease(event){
-    figcaption.textContent = event.target.parentNode.querySelector('.element__title').textContent;//меняю подпись к картинке в зависимости от кликнутого
-    popupFigureImage.alt = event.target.alt;//меняю альт в зависимости от кликнутого
-    popupFigureImage.src = event.target.src;//меняю изображение в зависимости от кликнутого
-    openPopapCardIncrease()
+function handlePreviewPicture(nameImage, linkImage){
+    popupFigureFigcaption.textContent = nameImage//меняю подпись к картинке в зависимости от кликнутого
+    popupFigureImage.alt = nameImage;//меняю альт в зависимости от кликнутого
+    popupFigureImage.src = linkImage;//меняю изображение в зависимости от кликнутого
+    openPopup(popupFigure);
 }

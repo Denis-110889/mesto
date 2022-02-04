@@ -34,6 +34,9 @@
 @import url(../blocks/popup/__input/_place/popup__input_place_about.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/__form/popup__form.css);
+@import url(../blocks/popup/__figure/popup__figure.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__figcaption/popup__figcaption.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__title/profile__title.css);
@@ -45,12 +48,9 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__container/profile__container.css);
 
-@import url(../blocks/popupImage/popupImage.css);
-@import url(../blocks/popupImage/__save/popupImage__save.css);
-@import url(../blocks/popupImage/_opened/popupImage_opened.css);
 
-@import url(../blocks/popupFigure/popupFigure.css);
-@import url(../blocks/popupFigure/_activ/popupFigure_activ.css);
-@import url(../blocks/popupFigure/__figure/popupFigure__figure.css);
-@import url(../blocks/popupFigure/__image/popupFigure__image.css);
-@import url(../blocks/popupFigure/__figcaption/popupFigure__figcaption.css);
+
+
+
+
+

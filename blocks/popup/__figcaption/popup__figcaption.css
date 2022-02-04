@@ -1,4 +1,4 @@
-.popupFigure__figcaption {
+.popup__figcaption {
     color: #fff;
     font-size: 12px;
     line-height: 15px;
@@ -6,7 +6,7 @@
 }
 
 @media screen and (max-width: 540px) {
-    .popupFigure__figcaption {
+    .popup__figcaption {
         min-width: 240px;
     }
 }
