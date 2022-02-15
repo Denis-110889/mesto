@@ -4,7 +4,6 @@
 
 @import url(../blocks/body/body.css);
 
-@import url(../blocks/content/content.css);
 
 @import url(../blocks/element/element.css);
 @import url(../blocks/element/__title/element__title.css);
@@ -28,12 +27,9 @@
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__save/popup__save.css);
-@import url(../blocks/popup/__input/_place/popup__input_place_name.css);
 @import url(../blocks/popup/__content/popup__content.css);
 @import url(../blocks/popup/__close/popup__close.css);
-@import url(../blocks/popup/__input/_place/popup__input_place_about.css);
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__figcaption/popup__figcaption.css);
@@ -54,68 +50,3 @@
 @import url(../blocks/error-message/_visible/error-message_visible.css);
 
 @import url(../blocks/popup/__save/_disabled/popup__save_disabled.css);
-
-
-
-
-/*.popup__input_line_error {
-    border-bottom: 1px solid #ff0000;
-}*/
-
-/*.error-message {
-    display: inline-block;
-    margin-left: 36px;
-    margin-bottom: 13px;
-    font-size: 12px;
-    line-height: 15px;
-    color: #ff0000;
-    transition: .3s;
-    padding: 0;
-    opacity: 0;
-}
-
-.error-message:last-of-type {
-    margin-bottom: 31.34px;
-}*/
-/*
-.error-message_visible {
-    opacity: 1;
-}*/
-
-/*
-.popup__save_disabled {
-    background-color: #E5E5E5;
-    color: rgb(0, 0, 0, .2);
-    border: 1px solid  rgb(0, 0, 0, .2);
-}
-*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
