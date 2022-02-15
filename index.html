@@ -37,37 +37,42 @@
             <p class="footer__copyring">© 2020 Mesto Russia</p>
         </footer>
 
-        <div class="popup popup_type_profile">            
+        <section class="popup popup_type_profile popup__section">            
             <div class="popup__content"> 
                 <button class="popup__close popup__close_profile" type="button"></button>
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <form class="popup__form-profile" name="popup">
-                    <input class="popup__input popup__input_place_name" name="name" type="text" placeholder="Имя">
-                    <input class="popup__input popup__input_place_about" name="about" type="text" placeholder="Расскажите о себе">
-                    <button class="popup__save" type="submit">Сохранить</button>
+                <form class="popup__form popup__form-profile" name="formProfile" novalidate>
+                    <input id="nameProfile" class="popup__input popup__input_place_name" name="nameProfile" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+                    <span id="error-nameProfile"  class="error-message error-message_visible"></span>
+                    <input id="aboutProfile" class="popup__input popup__input_place_about" name="aboutProfile" type="text" placeholder="Расскажите о себе" minlength="2" maxlength="200" required>
+                    <span id="error-aboutProfile"  class="error-message error-message_visible"></span>
+                    <button class="popup__save" type="submit" >Сохранить</button>
                 </form>
             </div>            
-        </div>
+        </section>
 
-        <div class="popup popup_type_add-card">            
+        <section class="popup popup_type_add-card popup__section">            
             <div class="popup__content"> 
                 <button class="popup__close popup__close_image" type="button"></button>
                 <h2 class="popup__title">Новое место</h2>
-                <form class="popup__form-image" name="popup">
-                    <input class="popup__input popup__input_place_place" name="name" type="text" placeholder="Название">
-                    <input class="popup__input popup__input_place_link" name="about" type="text" placeholder="Ссылка на картинку">
-                    <button class="popup__save" type="submit">Сохранить</button>
+                <form class="popup__form popup__form-image" name="formPlace" novalidate>
+                    <input id="namePlace" class="popup__input popup__input_place_place" name="namePlace" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                    <span id="error-namePlace"  class="error-message error-message_visible"></span>
+                    <input id="UrlPlace" class="popup__input popup__input_place_link" name="UrlPlace" type="url" placeholder="Ссылка на картинку" required>
+                    <span id="error-UrlPlace"  class="error-message error-message_visible"></span>
+                    
+                    <button class="popup__save" type="submit" >Сохранить</button>
                 </form>
             </div>            
-        </div>
+        </section>
 
-        <div class="popup popup_type_figure" >
+        <section class="popup popup_type_figure" >
             <figure class="popup__figure">
                 <button class="popup__close popup__close_figure" type="button"></button>
                 <img class="popup__image" src="http://risovach.ru/upload/2014/10/mem/a-teper-predstav_63375073_orig_.jpeg" alt="подпись к картинке">
                 <figcaption class="popup__figcaption">Здесь подпись к картинке</figcaption>
             </figure>
-        </div>
+        </section>
 
         <template class="template__item">
             <article class="element">
@@ -81,7 +86,9 @@
         </template>
 
     </div>
+
     <script src="script/card.js"></script>
+    <script src="script/validation.js"></script>
     <script src="script/index.js"></script>
 </body>
 </html>

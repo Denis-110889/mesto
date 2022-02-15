@@ -37,6 +37,7 @@
 @import url(../blocks/popup/__figure/popup__figure.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__figcaption/popup__figcaption.css);
+@import url(../blocks/popup/__input/_line/popup__input_line_error.css);
 
 @import url(../blocks/profile/profile.css);
 @import url(../blocks/profile/__title/profile__title.css);
@@ -47,6 +48,70 @@
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__container/profile__container.css);
+
+
+@import url(../blocks/error-message/error-message.css);
+@import url(../blocks/error-message/_visible/error-message_visible.css);
+
+@import url(../blocks/popup/__save/_disabled/popup__save_disabled.css);
+
+
+
+
+/*.popup__input_line_error {
+    border-bottom: 1px solid #ff0000;
+}*/
+
+/*.error-message {
+    display: inline-block;
+    margin-left: 36px;
+    margin-bottom: 13px;
+    font-size: 12px;
+    line-height: 15px;
+    color: #ff0000;
+    transition: .3s;
+    padding: 0;
+    opacity: 0;
+}
+
+.error-message:last-of-type {
+    margin-bottom: 31.34px;
+}*/
+/*
+.error-message_visible {
+    opacity: 1;
+}*/
+
+/*
+.popup__save_disabled {
+    background-color: #E5E5E5;
+    color: rgb(0, 0, 0, .2);
+    border: 1px solid  rgb(0, 0, 0, .2);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
