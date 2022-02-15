@@ -76,5 +76,5 @@ enableValidation({
     inactiveButtonClass: 'popup__save_disabled',
     inputErrorClass: 'popup__input_line_error',
     errorClass: 'error-message_visible',
-    sectionSelector: '.popup__section'
+    sectionSelector: '.section'
 });
