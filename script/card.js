@@ -1,6 +1,6 @@
 import {popupFigureFigcaption, popupFigureImage, openPopup, popupFigure} from './utils.js'
 
-
+/* Геннадий не знаю в чем у меня конечно проблемма но класс кард у меня с заглавной буквы и название файла тоже с заглавной буквы - странно*/
 export default class Card {
     constructor(data, cardSelector, handleCardClick) {
         this._cardSelector = cardSelector;
@@ -22,7 +22,7 @@ export default class Card {
         this._cardElement.querySelector('.element__trash').addEventListener('click', () => this._removeCard());//на удаление
         this._cardElement.querySelector('.element__button').addEventListener('click', (evt) => this._likeCard(evt));//лайк карточек
         this._cardImage.addEventListener('click', () => {//увеличение изображения по клику
-            this._handlePreviewPicture(this._name, this._link);
+            this._handleCardClick(this._name, this._link);
         });
     };
 
@@ -34,16 +34,8 @@ export default class Card {
         this._cardElement.remove();
 };
 
-    _handlePreviewPicture = () => {//функция увеличения изображенияпо клику
-        popupFigureFigcaption.textContent = this._name;//меняю подпись к картинке в зависимости от кликнутого
-        popupFigureImage.alt = this._name;//меняю альт в зависимости от кликнутого
-        popupFigureImage.src = this._link;//меняю изображение в зависимости от кликнутого
-        openPopup(popupFigure);
-    };
-
     getCardElement() {//основнаяпубличная функциявклассе кард
         this._cardElement = this._getTemplate();//получениякард элемента из функции в зависимостиот того что надо получить
-        this._likeButton = this._cardElement.querySelector('element__button');//кнопка лайка
         this._cardImage = this._cardElement.querySelector('.element__image');//изображение карточкм
         this._cardImage.src = this._link;//берем значения инпута для линка
         this._cardImage.alt = this._name;//берем значение импута для текста
@@ -52,21 +44,3 @@ export default class Card {
         return this._cardElement;
 };
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

@@ -2,7 +2,7 @@
 
 import {initialCards} from "./cards.js"
 import {FormValidator} from "./FormValidator.js"
-import {popupFigure, openPopup, closePopupKeyup, closePopupOverlay} from './utils.js'
+import {popupFigure, openPopup, closePopup, popupFigureFigcaption, popupFigureImage} from './utils.js'
 import Card from './Card.js'
 
 /*----- Все константы проекта ---------------------------------------------------------------------- */
@@ -47,7 +47,7 @@ popupProfileClose.addEventListener('click', () => closePopup(popupProfile));//к
 popupProfileForm.addEventListener('submit', handleProfilePopupSubmit);//кнопка сохранения формы попапа редактирования профиля
 popupOpenImage.addEventListener('click', () => {
     openPopup(popupAddCardImage);
-    addCardValidator.resetError();
+    addCardValidator.resetValidation();
 });
 popupCloseImage.addEventListener('click', () => closePopup(popupAddCardImage));//кнопка закрытия попапа добавления фото
 popupFormImage.addEventListener('submit', handleCardFormSubmit);//кнопка сохранения формы попапа добавления фото
@@ -68,9 +68,16 @@ function handleProfilePopupSubmit(event) {
     popupProfileSubtitle.textContent = `${popupProfileInputAbout.value}`;
     closePopup(popupProfile);
 };
+/*функция подписи и установка линка на картинку при открывании*/
+function handleCardClick(name, link) {//передадим эту функцию в кард 
+    popupFigureImage.src = link;
+    popupFigureImage.alt = name;
+    popupFigureFigcaption.textContent = name;
+    openPopup(popupFigure);
+}
 /* Фуккция создания карточек скалвсса кард */
 function createCard(item) {
-    return new Card (item, '.template__item').getCardElement();
+    return new Card (item, '.template__item', handleCardClick).getCardElement();
 }
 /* Фуккция добавления карточек */
 function addCard(item) {
@@ -89,18 +96,10 @@ function handleCardFormSubmit(evt) {
     };
     initialCards.push(newCard);
     addCard(newCard);
-    const button = popupFormImage.querySelector('.popup__save');
-    button.setAttribute('disabled', true);
-    button.classList.add('popup__save_disabled');
     popupInputNameImage.value = '';
     popupInputLinkImage.value = '';
     closePopup(popupAddCardImage);
 }
-/* Фуккция закрытия попапа по клику или оверлею */
-function closePopup (element) {
-    element.classList.remove('popup_opened');
-    document.removeEventListener('keyup', closePopupKeyup);
-    document.removeEventListener('click', closePopupOverlay);
-}
+
 
 renderCards()

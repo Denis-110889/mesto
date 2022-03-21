@@ -11,7 +11,7 @@ export const ESC_CODE = 'Escape';
 export const openPopup = (element) => {
     element.classList.add('popup_opened');
     document.addEventListener('keyup', closePopupKeyup);
-    document.addEventListener('click', closePopupOverlay);
+    document.addEventListener('mousedown', closePopupOverlay);
 };
 /* Фуккция закрытия поппапа по ЕСК */
 export const closePopupKeyup = (evt) => {
@@ -23,13 +23,12 @@ export const closePopupKeyup = (evt) => {
 /* Фуккция закрытия поппапа по оверлею */
 export const closePopupOverlay = (evt) => {
     if (evt.target.classList.contains('popup')){
-        const openedPopup = document.querySelector('.popup_opened');
-        closePopup(openedPopup);
+        closePopup(evt.target);
 };
 };
 /* Фуккция закрытия поппапа и снятие слушателей */
 export function closePopup (element){
     element.classList.remove('popup_opened');
-    document.removeEventListener('click', closePopupOverlay);
+    document.removeEventListener('mousedown', closePopupOverlay);
     document.removeEventListener('keyup', closePopupKeyup);
 };
