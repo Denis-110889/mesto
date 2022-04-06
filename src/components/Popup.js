@@ -1,4 +1,4 @@
-import { ESC_CODE } from './utils.js'
+import { ESC_CODE } from '../utils/constants.js'
 
 export class Popup {
     constructor(popupSelector){
@@ -23,7 +23,7 @@ export class Popup {
 
     setEventListeners(){
         const closeButton = this._popup.querySelector('.popup__close')
-        this._popup.addEventListener('click', (e) => {
+        this._popup.addEventListener('mousedown', (e) => {
             if (e.target.classList.contains('popup') || e.target === closeButton){
                 this.close(); 
             };
