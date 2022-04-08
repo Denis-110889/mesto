@@ -50,3 +50,20 @@
 @import url(../blocks/error-message/_visible/error-message_visible.css);
 
 @import url(../blocks/popup/__save/_disabled/popup__save_disabled.css);
+
+@import url(../blocks/popup/__titleDelete/popup__titleDelete.css);
+@import url(../blocks/popup/__saveDelete/popup__saveDelete.css);
+
+
+@import url(../blocks/element/__heart-value/element__heart-value.css);
+
+@import url(../blocks/profile/__avatar-button/profile__avatar-button.css);
+
+@import url(../blocks/popup/__save-avatar/popup__save-avatar.css);
+
+
+
+
+
+
+

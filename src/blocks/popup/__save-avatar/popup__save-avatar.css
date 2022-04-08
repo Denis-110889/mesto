@@ -1,0 +1,31 @@
+.popup__save-avatar {
+    width: 358px;
+    height: 50px;
+    background-color: #000;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 0;
+    margin-top: 18px;
+    margin-left: 36px;
+    margin-bottom: 36px;
+}
+
+.popup__save-avatar:hover {
+    opacity: .8;
+    transition: 0.35s;
+}
+
+@media screen and (max-width: 540px) {
+    .popup__save-avatar {
+        max-width: 238px;
+        max-height: 46px;
+        font-size: 14px;
+        line-height: 17px;
+        margin: 0;
+        margin-left: 22px;
+        margin-bottom: 25px;
+    }
+}

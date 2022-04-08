@@ -17,6 +17,14 @@ export const validationConfig = {
     errorClass: 'error-message_visible',
     sectionSelector: '.section'
     };
+//Подключение проекта к серверу
+export const optionsAPI = {
+    baseURL: 'https://mesto.nomoreparties.co/v1/cohort-39/',
+    headers: {
+        authorization: 'a4e71077-2ead-4b23-b808-4b2822c2c13e',
+        'Content-Type': 'application/json'
+    }
+}
 export const openPopup = (element) => {
     element.classList.add('popup_opened');
     document.addEventListener('keyup', closePopupKeyup);
