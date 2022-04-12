@@ -8,6 +8,8 @@ export const popupProfileInputName = document.querySelector('.popup__input_place
 export const popupProfileInputAbout = document.querySelector('.popup__input_place_about');
 export const popupProfileOpen = document.querySelector('.profile__edit-button');
 export const popupOpenImage = document.querySelector('.profile__add-button');
+export const popupFormAvatar = document.querySelector('.popup__form-avatar');
+export const popupOpenAvatar = document.querySelector('.profile__avatar-button');
 export const validationConfig = {
     formSelector: '.popup__form',
     inputSelector: '.popup__input',
@@ -17,43 +19,8 @@ export const validationConfig = {
     errorClass: 'error-message_visible',
     sectionSelector: '.section'
     };
-//Подключение проекта к серверу
-export const optionsAPI = {
-    baseURL: 'https://mesto.nomoreparties.co/v1/cohort-39/',
-    headers: {
-        authorization: 'a4e71077-2ead-4b23-b808-4b2822c2c13e',
-        'Content-Type': 'application/json'
-    }
-}
 export const openPopup = (element) => {
     element.classList.add('popup_opened');
     document.addEventListener('keyup', closePopupKeyup);
     document.addEventListener('mousedown', closePopupOverlay);
 };
-export const initialCards = [
-    {
-        name: 'Архыз',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-    },
-    {
-        name: 'Челябинская область',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-    },
-    {
-        name: 'Иваново',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-    },
-    {
-        name: 'Камчатка',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-    },
-    {
-        name: 'Холмогорский район',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-    },
-    {
-        name: 'Байкал',
-        link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-    }
-    
-];
