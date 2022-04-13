@@ -12,11 +12,6 @@ export class PopupWithConfirm extends Popup {
         this._handleConfirmPopup(this._cardId);
     };
 
-    _removeEventListeners() {
-        super._removeEventListeners();
-        this._confirmButton.removeEventListener('click', this._confirm);
-    };
-
     setEventListeners() {
         super.setEventListeners();
         this._confirmButton.addEventListener('click', this._confirm);

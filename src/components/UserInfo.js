@@ -17,7 +17,12 @@ export class UserInfo {
         this._jobElement.textContent = job;
     };
 
+    /*setAvatar(avatar){
+        this._avatarElement.src = avatar;
+    };*/
+
     setAvatar({avatar}){
         this._avatarElement.src = avatar;
     };
+
 };

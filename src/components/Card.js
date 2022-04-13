@@ -31,13 +31,13 @@ export default class Card {
 
     removeCard(){
         this._cardElement.remove();
+        this._cardElement = null;
 };
 
     setLikes(newLikes){
         this._likes = newLikes;
         const likeCountElement = this._cardElement.querySelector('.element__heart-value');
         likeCountElement.textContent = this._likes.length;
-        const userHasLikedCard = this._likes.find(user => user._id === this._userId);
         if(this.isLiked()){
             this._handleActivLikeIcon();
         } else {
