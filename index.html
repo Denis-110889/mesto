@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestro</title>
+    <!--<link rel="stylesheet" href="pages/index.css"> Этот код надо закоментить при загрузке на сервер -->
+<script defer src="index.js"></script><link href="main.css" rel="stylesheet"></head>
+<body class="body">
+    <div class="page">
+
+        <header class="header">
+            <img src="03b78ada3425e9132ff3.svg" class="header__logo" alt="Логотип mestro">
+            <!--<img src="./images/header-logo.svg" class="header__logo" alt="Логотип mestro">-->
+        </header>
+
+        <main class="content">
+            <section class="profile">
+                <div class="profile__container">
+                    <button class="profile__avatar-button">
+                        <img class="profile__avatar" src="#" alt="Фото аватара">
+                    </button>
+                    <div class="profile__info">
+                        <div class="profile__name">  
+                            <h1 class="profile__title">Загружаю...</h1>
+                            <button class="profile__edit-button" type="button"></button>
+                        </div> 
+                        <p class="profile__subtitle">Загружаю...</p>
+                    </div>
+                </div>
+                <button class="profile__add-button" type="button"></button>
+            </section>
+            <section class="elements">
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p class="footer__copyring">© 2020 Mesto Russia</p>
+        </footer>
+
+        <section class="popup popup_type_profile section">            
+            <div class="popup__content"> 
+                <button class="popup__close popup__close_profile" type="button"></button>
+                <h2 class="popup__title">Редактировать профиль</h2>
+                <form class="popup__form popup__form-profile" name="formProfile" novalidate>
+                    <input id="nameProfile" class="popup__input popup__input_place_name" name="nameProfile" type="text" placeholder="Имя" minlength="2" maxlength="40" required>
+                    <span id="error-nameProfile"  class="error-message error-message_visible"></span>
+                    <input id="aboutProfile" class="popup__input popup__input_place_about" name="aboutProfile" type="text" placeholder="Расскажите о себе" minlength="2" maxlength="200" required>
+                    <span id="error-aboutProfile"  class="error-message error-message_visible"></span>
+                    <button class="popup__save" type="submit" >Сохранить</button>
+                </form>
+            </div>            
+        </section>
+
+        <section class="popup popup_type_add-card section">            
+            <div class="popup__content"> 
+                <button class="popup__close popup__close_image" type="button"></button>
+                <h2 class="popup__title">Новое место</h2>
+                <form class="popup__form popup__form-image" name="formPlace" novalidate>
+                    <input id="namePlace" class="popup__input popup__input_place_place" name="namePlace" type="text" placeholder="Название" minlength="2" maxlength="30" required>
+                    <span id="error-namePlace"  class="error-message error-message_visible"></span>
+                    <input id="UrlPlace" class="popup__input popup__input_place_link" name="UrlPlace" type="url" placeholder="Ссылка на картинку" required>
+                    <span id="error-UrlPlace"  class="error-message error-message_visible"></span>
+                    
+                    <button class="popup__save" type="submit" >Создать</button>
+                </form>
+            </div>            
+        </section>
+
+        <section class="popup popup_type_figure" >
+            <figure class="popup__figure">
+                <button class="popup__close popup__close_figure" type="button"></button>
+                <img class="popup__image" src="http://risovach.ru/upload/2014/10/mem/a-teper-predstav_63375073_orig_.jpeg" alt="подпись к картинке">
+                <figcaption class="popup__figcaption">Здесь подпись к картинке</figcaption>
+            </figure>
+        </section>
+
+        <section class="popup popup_type_avatar section">            
+            <div class="popup__content"> 
+                <button class="popup__close popup__close_image" type="button"></button>
+                <h3 class="popup__title">Обновить аватар</h3>
+                <form class="popup__form popup__form-avatar"  name="avatarForm" novalidate>
+                    <input id="avatar" class="popup__input popup__input_place_avatar" name="avatar" type="url" placeholder="Ссылка на аватар" minlength="2" required>
+                    <span id="error-avatar"  class="error-message error-message_visible"></span>
+                    <button class="popup__save" type="submit" >Сохранить</button>
+                </form>
+            </div>            
+        </section>
+
+        <section class="popup popup_type_delete section">            
+            <div class="popup__content"> 
+                <button class="popup__close popup__close_image" type="button"></button>
+                <h3 class="popup__titleDelete">Вы уверены?</h3>    
+                <button class="popup__saveDelete popup__save delete-button">Да</button>    
+            </div>            
+        </section>
+
+        <template class="template__item">
+            <article class="element">
+                <button class="element__trash"></button>
+                <img class="element__image">
+                <div class="element__mask-group">
+                    <h2 class="element__title"></h2>
+                    <div class="element__heart-container">
+                    <button class="element__button" type="button"></button>
+                    <p class="element__heart-value"></p>
+                    </div>
+                </div>
+            </article>
+        </template>
+
+    </div>
+<!--<script type="module" src="pages/index.js"></script> Закоментировать при отправке на сервер-->
+</body>
+</html>
+
